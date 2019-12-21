@@ -25,7 +25,7 @@ app.set("view engine", "handlebars");
 
 
 // // Connect to the Mongo DB
-mongoose.connect("mongodb://localhost/news", {useNewUrlParser: true});
+mongoose.connect(process.env.MONGODB_URI || "mongodb://user:password123@ds357708.mlab.com:57708/heroku_70l7fc74", {useNewUrlParser: true});
 
 app.get("/scrape", function (req, res) {
 
