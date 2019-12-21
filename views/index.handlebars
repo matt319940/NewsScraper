@@ -1,0 +1,33 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <a class="navbar-brand" href="#">Mongo News</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+    aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+      <a class="nav-item nav-link" href="/saved">My Articles</a>
+      <a style="position: absolute; right: 10%;" href="/scrape" class="btn btn-success btn-md active" role="button"
+        aria-pressed="true">Gimme Da News!</a>
+    </div>
+  </div>
+</nav>
+
+<section id="bannerImage"></section>
+
+<div id="articles">
+  {{#each result}}
+  <div class="card article mb-3">
+    <div class="card-header text-white bg-primary">
+      <b class="headline">{{this.Headline}}</b>
+      <span style="float: right">
+        <button type="button" class="btn btn-warning">Save Article</button>
+      </span>
+    </div>
+    <div class="card-body text-dark">
+      <p class="summary card-text">{{this.Summary}}</p>
+      <a href="{{this.URL}}" target="_blank">Link To Article</a>
+    </div>
+  </div>
+  {{/each}}
+</div>
